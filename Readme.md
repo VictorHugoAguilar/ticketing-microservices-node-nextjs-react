@@ -18,6 +18,15 @@ add:
 127.0.0.1 ticketing.dev
 `````
 
+# For develop set-up skaffold
+ 
+this allows to raise all the images that we have configured in our infra 
+
+`````
+skaffold dev
+`````
+
+
 
 
 
