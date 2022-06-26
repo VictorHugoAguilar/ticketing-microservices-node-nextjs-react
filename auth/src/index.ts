@@ -24,8 +24,18 @@ app.all('*', async (req, res) => {
 
 app.use(errorHandler);
 
+const start = async () => {
+    try {
+        await mongoose.connect('mongodb://auth-mongo-srv:27017/auth', {
+        });
+        console.info('Connect to MongoDb');
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 app.listen(3000, () => {
     console.log('Listen from port: ', 3000)
 });
 
-
+start();

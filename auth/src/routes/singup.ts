@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import { body, validationResult } from 'express-validator';
+import { User } from '../models/user';
 import { RequestValidationError } from '../errors/request-validation-error';
-import { DatabaseConnetionError } from '../errors/database-connetion-error';
 
 const router = express.Router();
 
@@ -21,10 +21,17 @@ router.post('/api/users/signup', [
         }
         const { email, password } = req.body;
         console.log('Creating a user ...');
-        // new user({email, password})
-        throw new DatabaseConnetionError();
+        const existingUser = await User.findOne({ email });
 
-        res.send({});
+        if (existingUser) {
+            console.log('email in user');
+            return res.send({});
+        }
+
+        const user = User.build({ email, password });
+        await user.save();
+
+        res.status(201).send(user);
     });
 
 export { router as signupRouter };
