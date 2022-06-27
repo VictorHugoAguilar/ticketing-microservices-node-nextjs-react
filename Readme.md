@@ -1,6 +1,3 @@
-
-
-
 # Docker Build Image of service
 
 ````
