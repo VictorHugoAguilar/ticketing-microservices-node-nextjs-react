@@ -31,6 +31,11 @@ kubectl create secret generic jwt-secret --from-literal=JWT_KEY=asdf
 kubectl get secrets
 `````
 
+## Problem resolution
+
+- if it does not let you open in the browser due to certificate problems
+write thisisunsafe in navigator
+
 
 
 

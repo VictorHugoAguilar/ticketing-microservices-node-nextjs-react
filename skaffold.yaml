@@ -16,3 +16,11 @@ build:
         manual:
           - src: 'scr/**/*.ts'
             dest: .
+    - image: victoruugo/ticketing-client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '**/*.js'
+            dest: .
