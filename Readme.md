@@ -23,7 +23,7 @@ this allows to raise all the images that we have configured in our infra
 skaffold dev
 `````
 
-# For enviroment development, create a secret JWT in kubernete with command 
+## For enviroment development, create a secret JWT in kubernete with command 
 
 `````
 kubectl create secret generic jwt-secret --from-literal=JWT_KEY=asdf
