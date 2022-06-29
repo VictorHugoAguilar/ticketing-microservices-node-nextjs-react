@@ -2,7 +2,7 @@ FROM node:alpine
 
 WORKDIR /app
 COPY package.json .
-# --only=prod para que no cree las dependencias de dev
+# --only=prod so you don't create dev dependencies
 RUN npm install --only=prod
 COPY . .
 
