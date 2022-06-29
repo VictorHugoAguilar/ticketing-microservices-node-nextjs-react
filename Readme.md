@@ -34,7 +34,7 @@ kubectl get secrets
 ## Problem resolution
 
 - if it does not let you open in the browser due to certificate problems
-write thisisunsafe in navigator
+- [] write thisisunsafe in navigator
 
 
 
