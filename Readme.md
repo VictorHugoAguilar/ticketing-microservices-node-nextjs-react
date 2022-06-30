@@ -36,6 +36,19 @@ kubectl get secrets
 - if it does not let you open in the browser due to certificate problems
     - [ ] write thisisunsafe in navigator
 
+- In the upcoming lecture, we will be adding the ingress-nginx service name and namespace to our axios request.
+    - [ ] kubectl get services -n ingress-nginx  
+
+- Specifying the host
+    - [ ] kubectl get namespace
+    - [ ] kubectl get service -n ingress-nginx
+    - [ ] add in axios the route 'http://ingress-nginx.ingress-nginx.svc.cluster.local'
+    
+    1. The url should have the format `http://<SERVICENAME>.<NAMESPACE>.svc.cluster.local`
+
+    2. The way to check existing namespaces is `kubectl get namespace`
+
+    3. The way to check servicenames inside a namespace is `kubectl get services -n <NAMESPACE>`
 
 
 
