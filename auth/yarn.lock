@@ -284,6 +284,19 @@
   "resolved" "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   "version" "0.2.3"
 
+"@black_sheep/common@^1.0.3":
+  "integrity" "sha512-RZOmSOrhjBsIGh9AHjAz7AAfD9EJQQnuobswxCNhF94n0o4f2T94ZCVHOAUCPW3aQN4Lg8QlOQPj1cgOcYZ+nw=="
+  "resolved" "https://registry.npmjs.org/@black_sheep/common/-/common-1.0.3.tgz"
+  "version" "1.0.3"
+  dependencies:
+    "@types/cookie-session" "^2.0.42"
+    "@types/express" "^4.17.12"
+    "@types/jsonwebtoken" "^8.5.1"
+    "cookie-session" "^1.4.0"
+    "express" "^4.17.1"
+    "express-validator" "^6.12.0"
+    "jsonwebtoken" "^8.5.1"
+
 "@cspotcode/source-map-support@^0.8.0":
   "integrity" "sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw=="
   "resolved" "https://registry.npmjs.org/@cspotcode/source-map-support/-/source-map-support-0.8.1.tgz"
@@ -643,7 +656,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/cookie-session@^2.0.44":
+"@types/cookie-session@^2.0.42", "@types/cookie-session@^2.0.44":
   "integrity" "sha512-3DheOZ41pql6raSIkqEPphJdhA2dX2bkS+s2Qacv8YMKkoCbAIEXbsDil7351ARzMqvfyDUGNeHGiRZveIzhqQ=="
   "resolved" "https://registry.npmjs.org/@types/cookie-session/-/cookie-session-2.0.44.tgz"
   "version" "2.0.44"
@@ -665,7 +678,7 @@
     "@types/qs" "*"
     "@types/range-parser" "*"
 
-"@types/express@*", "@types/express@^4.17.13":
+"@types/express@*", "@types/express@^4.17.12", "@types/express@^4.17.13":
   "integrity" "sha512-6bSZTPaTIACxn48l50SR+axgrqm6qXFIxrdAKaG6PaJk3+zuUr35hBlgT7vOmJcum+OEaIBLtHV/qloEAFITeA=="
   "resolved" "https://registry.npmjs.org/@types/express/-/express-4.17.13.tgz"
   "version" "4.17.13"
@@ -709,7 +722,7 @@
     "jest-matcher-utils" "^28.0.0"
     "pretty-format" "^28.0.0"
 
-"@types/jsonwebtoken@^8.5.8":
+"@types/jsonwebtoken@^8.5.1", "@types/jsonwebtoken@^8.5.8":
   "integrity" "sha512-zm6xBQpFDIDM6o9r6HSgDeIcLy82TKWctCXEPbJJcXb5AKmi5BNNdLXneixK4lplX3PqIVcwLBCGE/kAGnlD4A=="
   "resolved" "https://registry.npmjs.org/@types/jsonwebtoken/-/jsonwebtoken-8.5.8.tgz"
   "version" "8.5.8"
@@ -1259,6 +1272,15 @@
   dependencies:
     "safe-buffer" "~5.1.1"
 
+"cookie-session@^1.4.0":
+  "integrity" "sha512-0hhwD+BUIwMXQraiZP/J7VP2YFzqo6g4WqZlWHtEHQ22t0MeZZrNBSCxC1zcaLAs8ApT3BzAKizx9gW/AP9vNA=="
+  "resolved" "https://registry.npmjs.org/cookie-session/-/cookie-session-1.4.0.tgz"
+  "version" "1.4.0"
+  dependencies:
+    "cookies" "0.8.0"
+    "debug" "2.6.9"
+    "on-headers" "~1.0.2"
+
 "cookie-session@^2.0.0":
   "integrity" "sha512-hKvgoThbw00zQOleSlUr2qpvuNweoqBtxrmx0UFosx6AGi9lYtLoA+RbsvknrEX8Pr6MDbdWAb2j6SnMn+lPsg=="
   "resolved" "https://registry.npmjs.org/cookie-session/-/cookie-session-2.0.0.tgz"
@@ -1527,7 +1549,7 @@
   "resolved" "https://registry.npmjs.org/express-async-errors/-/express-async-errors-3.1.1.tgz"
   "version" "3.1.1"
 
-"express-validator@^6.14.2":
+"express-validator@^6.12.0", "express-validator@^6.14.2":
   "integrity" "sha512-8XfAUrQ6Y7dIIuy9KcUPCfG/uCbvREctrxf5EeeME+ulanJ4iiW71lWmm9r4YcKKYOCBMan0WpVg7FtHu4Z4Wg=="
   "resolved" "https://registry.npmjs.org/express-validator/-/express-validator-6.14.2.tgz"
   "version" "6.14.2"
@@ -1535,7 +1557,7 @@
     "lodash" "^4.17.21"
     "validator" "^13.7.0"
 
-"express@^4.16.2", "express@^4.18.1":
+"express@^4.16.2", "express@^4.17.1", "express@^4.18.1":
   "integrity" "sha512-zZBcOX9TfehHQhtupq57OF8lFZ3UZi08Y97dwFCkD8p9d/d2Y3M+ykKcwaMDEL+4qyUolgBDX6AblpR3fL212Q=="
   "resolved" "https://registry.npmjs.org/express/-/express-4.18.1.tgz"
   "version" "4.18.1"
