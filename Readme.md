@@ -1,8 +1,14 @@
-## Docker Build Image of service
+## Docker Build Image of service in first place for all services created
 
 ````
 docker build -t {user}/auth .
 ````
+
+## Next to building image it publish in docker
+
+`````
+docker push {user}/auth  
+`````
 
 
 ## Setup nginx service for local dev
