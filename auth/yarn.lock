@@ -285,9 +285,9 @@
   "version" "0.2.3"
 
 "@black_sheep/common@^1.0.3":
-  "integrity" "sha512-RZOmSOrhjBsIGh9AHjAz7AAfD9EJQQnuobswxCNhF94n0o4f2T94ZCVHOAUCPW3aQN4Lg8QlOQPj1cgOcYZ+nw=="
-  "resolved" "https://registry.npmjs.org/@black_sheep/common/-/common-1.0.3.tgz"
-  "version" "1.0.3"
+  "integrity" "sha512-U4Sc1QvSpH3Itj0CWQ3IrERHEUYvJGdVjf7/LlUuP6zkocnqajb0W5KNofywNDJD2Bof2s7BNIBt7l0Yj+vT+A=="
+  "resolved" "https://registry.npmjs.org/@black_sheep/common/-/common-1.0.4.tgz"
+  "version" "1.0.4"
   dependencies:
     "@types/cookie-session" "^2.0.42"
     "@types/express" "^4.17.12"
