@@ -1,7 +1,6 @@
 import request from 'supertest';
 import app from '../../app';
 import mongoose from 'mongoose';
-import { Ticket } from '../../model/ticket';
 
 it('return 404 if the provided id does not exist', async () => {
     const id = new mongoose.Types.ObjectId().toHexString();
