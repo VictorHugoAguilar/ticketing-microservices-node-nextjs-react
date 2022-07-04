@@ -60,5 +60,14 @@ kubectl get secrets
 
 `````
 kubectl port-forward  <service ex: nats-depl-84d875cf5f-bzxd4>  <PORT> 4222:4222
-``````
+`````
+
+- if restart of pods, only delete
+`````
+kubectl get pods 
+
+-nats-depl-84d875cf5f-bzxd4   
+
+kubectl delete pod <service-pod> nats-depl-84d875cf5f-bzxd4   
+`````
 
