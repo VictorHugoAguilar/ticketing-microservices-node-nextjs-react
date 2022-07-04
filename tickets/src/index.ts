@@ -13,6 +13,8 @@ const start = async () => {
     }
 
     try {
+
+        // Event service
         // connect to service nats
         await natsWrapper.connect('ticketing', 'asdf', 'http://nats-srv:4222');
         // for close app close service too gracefull shutdown

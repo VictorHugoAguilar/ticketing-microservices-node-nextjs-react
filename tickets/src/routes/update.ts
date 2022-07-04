@@ -1,7 +1,9 @@
 import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
-import { DatabaseConnetionError, NotAuthorizedError, NotFoundError, requireAuth, validateRequest } from '@black_sheep/common';
+import { NotAuthorizedError, NotFoundError, requireAuth, validateRequest } from '@black_sheep/common';
 import { Ticket } from '../model/ticket';
+import { TicketUpdatedPublisher } from '../events/publishers/ticket-updated-publisher';
+import { natsWrapper } from '../nats-wrapper';
 
 const router = express.Router();
 
@@ -30,6 +32,13 @@ router.put('/api/tickets/:id', requireAuth, [
         price
     });
     await ticket.save();
+
+    await new TicketUpdatedPublisher(natsWrapper.client).publish({
+        id: ticket.id,
+        title: ticket.title,
+        price: ticket.price,
+        userId: ticket.userId
+    });
 
     res.status(200).send(ticket);
 });
