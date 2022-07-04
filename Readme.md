@@ -56,7 +56,9 @@ kubectl get secrets
 
     3. The way to check servicenames inside a namespace is `kubectl get services -n <NAMESPACE>`
 
+- if we want to start a service in a different port without having to configure anything we can do it with the option
 
-
-
+`````
+kubectl port-forward  <service ex: nats-depl-84d875cf5f-bzxd4>  <PORT> 4222:4222
+``````
 
