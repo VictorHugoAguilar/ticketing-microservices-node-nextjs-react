@@ -31,4 +31,12 @@ build:
       sync:
         manual:
           - src: 'scr/**/*.ts'
-            dest: .            
+            dest: .      
+    - image: victoruugo/orders
+      context: orders
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'scr/**/*.ts'
+            dest: .          
