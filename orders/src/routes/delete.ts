@@ -23,7 +23,6 @@ router.delete('/api/orders/:orderId',
         order.status = OrderStatus.Cancelled;
         await order.save();
 
-
         res.status(204).send(order);
     });
 
