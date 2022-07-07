@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
-import { NotAuthorizedError, NotFoundError, requireAuth, validateRequest } from '@black_sheep/common';
+import { BadRequestError, NotAuthorizedError, NotFoundError, requireAuth, validateRequest } from '@black_sheep/common';
 import { Ticket } from '../model/ticket';
 import { TicketUpdatedPublisher } from '../events/publishers/ticket-updated-publisher';
 import { natsWrapper } from '../nats-wrapper';
@@ -19,6 +19,10 @@ router.put('/api/tickets/:id', requireAuth, [
     const ticket = await Ticket.findById(req.params.id);
     if (!ticket) {
         throw new NotFoundError();
+    }
+
+    if (ticket.orderId) {
+        throw new BadRequestError('Cannot edit a reserved ticket');
     }
 
     if (ticket.userId !== req.currentUser!.id) {
