@@ -14,7 +14,7 @@ build:
         dockerfile: Dockerfile
       sync:
         manual:
-          - src: 'scr/**/*.ts'
+          - src: "scr/**/*.ts"
             dest: .
     - image: victoruugo/ticketing-client
       context: client
@@ -22,7 +22,7 @@ build:
         dockerfile: Dockerfile
       sync:
         manual:
-          - src: '**/*.js'
+          - src: "**/*.js"
             dest: .
     - image: victoruugo/tickets
       context: tickets
@@ -30,13 +30,21 @@ build:
         dockerfile: Dockerfile
       sync:
         manual:
-          - src: 'scr/**/*.ts'
-            dest: .      
+          - src: "scr/**/*.ts"
+            dest: .
     - image: victoruugo/orders
       context: orders
       docker:
         dockerfile: Dockerfile
       sync:
         manual:
-          - src: 'scr/**/*.ts'
-            dest: .          
+          - src: "scr/**/*.ts"
+            dest: .
+    - image: victoruugo/expiration
+      context: expiration
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "scr/**/*.ts"
+            dest: .
