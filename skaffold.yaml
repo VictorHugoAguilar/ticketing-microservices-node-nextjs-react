@@ -48,3 +48,11 @@ build:
         manual:
           - src: "scr/**/*.ts"
             dest: .
+    - image: victoruugo/payments
+      context: payments
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "scr/**/*.ts"
+            dest: .
