@@ -9,7 +9,7 @@ const start = async () => {
 
     if (!process.env.NATS_URL) {
         throw new Error('NATS_URL not found, must be defined');
-    }
+    } 
 
     if (!process.env.NATS_CLUSTER_ID) {
         throw new Error('NATS_CLUSTER_ID not found, must be defined');
