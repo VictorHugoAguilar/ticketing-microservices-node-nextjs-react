@@ -57,7 +57,7 @@ router.post(
             stripeId: payment.stripeId
         });
 
-        res.status(201).send({ success: true });
+        res.status(201).send({ id: payment.id });
     }
 );
 
