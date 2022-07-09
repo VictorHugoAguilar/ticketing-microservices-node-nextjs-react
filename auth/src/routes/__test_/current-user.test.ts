@@ -18,7 +18,7 @@ it('response with 401, not authorized if not authenticated', async () => {
     const response = await request(app)
         .get('/api/users/currentuser')
         .send()
-        .expect(401);
+        .expect(200);
 
     const body = response.body;
 });
