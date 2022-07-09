@@ -28,15 +28,19 @@ router.post(
         const { token, orderId } = req.body;
 
         const order = await Order.findById(orderId);
+        console.info('order', order);
 
         if (!order) {
+            console.error('order not found in new.ts');
             throw new NotFoundError();
         }
         if (order.userId !== req.currentUser!.id) {
+            console.error('not authorized in new.ts');
             throw new NotAuthorizedError();
         }
         if (order.status === OrderStatus.Cancelled) {
-            throw new BadRequestError('Cannot pay for an cancelled order');
+            console.error('cannot pay for an cancelled order in new.ts');
+            throw new BadRequestError('cannot pay for an cancelled order');
         }
 
         const charge = await stripe.charges.create({
@@ -44,17 +48,19 @@ router.post(
             amount: order.price * 100,
             source: token,
         });
+        console.log('charge', charge);
 
         const payment = Payment.build({
             orderId,
             stripeId: charge.id,
         });
+        console.log('payment', payment);
         await payment.save();
-
-        await new PaymentCreatedPublisher(natsWrapper.client).publish({
+        
+        new PaymentCreatedPublisher(natsWrapper.client).publish({
             id: payment.id,
             orderId: payment.orderId,
-            stripeId: payment.stripeId
+            stripeId: payment.stripeId,
         });
 
         res.status(201).send({ id: payment.id });

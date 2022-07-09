@@ -5,15 +5,17 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node-dev --poll src/index.ts",
-    "test": "jest --watchAll --no-cache",
-    "test:ci" : "jest"
+    "test": "jest --watchAll --no-cache --detectOpenHandles",
+    "test:ci": "jest --detectOpenHandles"
   },
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
     "setupFilesAfterEnv": [
       "./src/test/setup.ts"
-    ]
+    ],
+    "verbose": true,
+    "testTimeout": 1000000
   },
   "keywords": [],
   "author": "victor hugo aguilar",
