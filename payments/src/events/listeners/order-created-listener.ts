@@ -15,7 +15,8 @@ export class OrderCreatedListener extends Listener<OrderCreatedEvent> {
       userId: data.userId,
       version: data.version,
     });
-    await order.save();
+    const orderSaved = await order.save();
+    console.log(orderSaved);
 
     msg.ack();
   }
