@@ -1,3 +1,4 @@
 # file: ~/.gitignore_global
+node_modules
 .DS_Store
 .idea
